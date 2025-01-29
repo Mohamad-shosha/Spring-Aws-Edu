@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Address</title>
+    <link rel="stylesheet" href="/css/course-address.css">
+</head>
+<body>
+<div class="address-container">
+    <h1>Address of the instructor by Course Name</h1>
+    <p th:text="'Street: ' + ${address.street}"></p>
+    <p th:text="'City: ' + ${address.city}"></p>
+    <p th:text="'State: ' + ${address.state}"></p>
+    <p th:text="'Zip: ' + ${address.zip}"></p>
+    <p th:text="'Country: ' + ${address.country}"></p>
+    <a href="/">Back to List</a>
+</div>
+</body>
+</html>

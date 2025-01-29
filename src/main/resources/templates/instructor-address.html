@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instructor Address</title>
+    <link rel="stylesheet" href="/css/instructor-address.css" >
+</head>
+<body>
+<div class="address-container">
+    <h1>Instructor Address</h1>
+    <p><strong>Street:</strong> <span th:text="${instructorDto.getAddress().street}"></span></p>
+    <p><strong>City:</strong> <span th:text="${instructorDto.getAddress().city}"></span></p>
+    <p><strong>State:</strong> <span th:text="${instructorDto.getAddress().state}"></span></p>
+    <p><strong>Zip:</strong> <span th:text="${instructorDto.getAddress().zip}"></span></p>
+    <p><strong>Country:</strong> <span th:text="${instructorDto.getAddress().country}"></span></p>
+    <a href="/">Back to List</a>
+</div>
+</body>
+</html>

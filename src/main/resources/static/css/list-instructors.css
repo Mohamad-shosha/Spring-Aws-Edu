@@ -1,0 +1,167 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: #2980b9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: #0e67c8 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #0056b3 !important;
+    padding: 10px 15px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #3498db;
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+.dropdown-menu {
+    background-color: #2980b9;
+    border: none;
+}
+
+.dropdown-item {
+    color: #ecf0f1;
+    padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #3498db;
+}
+
+.dropdown-menu {
+    background-color: #2980b9;
+    border: none;
+}
+
+.dropdown-item {
+    color: #ecf0f1;
+    padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #3498db;
+}
+
+.form-inline .form-control {
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.btn-outline-success {
+    border-color: #27ae60;
+    color: #27ae60;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline-success:hover {
+    background-color: #27ae60;
+    color: white;
+}
+
+.container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2980b9;
+}
+
+.user-info {
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.username {
+    font-weight: bold;
+    color: #2980b9;
+}
+
+.user-roles {
+    color: #2980b9;
+}
+
+.highlight {
+    color: #34495e;
+}
+
+.instructor-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.instructor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 20px;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e67e22;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-add-instructor {
+    background-color: #2980B9FF;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-add-instructor:hover {
+    background-color: #1a5276;
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #2980b9;
+    color: #ecf0f1;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,47 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.instructor-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #e9ecef;
+    transition: box-shadow 0.3s ease;
+}
+
+.instructor-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #343a40;
+}
+
+.card-text {
+    margin-top: 10px;
+    color: #495057;
+}
+
+.highlight {
+    color: #28a745;
+}
+
+.no-results {
+    color: #dc3545;
+}
+
+.search-bar {
+    margin-bottom: 30px;
+}

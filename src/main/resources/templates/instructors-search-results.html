@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Search Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/instructor-search-results.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Instructor Search Results</h1>
+
+    <div class="search-bar">
+        <form action="/instructors/search" method="get" class="form-inline justify-content-center">
+            <input type="text" name="firstName" class="form-control mr-2" placeholder="Enter first name" required>
+            <button type="submit" class="btn btn-primary">Search Again</button>
+        </form>
+    </div>
+
+    <div class="row">
+        <th:block th:each="instructor : ${instructors}">
+            <div class="col-md-4 mb-4">
+                <div class="instructor-card card">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${instructor.firstName} + ' ' + ${instructor.lastName}"></h5>
+                        <p class="card-text">
+                            <strong class="highlight">Email:</strong> <span th:text="${instructor.email}"></span><br>
+                            <strong class="highlight">Birth Date:</strong> <span th:text="${instructor.birthDate}"></span><br>
+                            <strong class="highlight">Address:</strong> <span th:text="${instructor.address.street} + ', ' + ${instructor.address.city} + ', ' + ${instructor.address.state}"></span><br>
+                            <strong class="highlight">Course:</strong> <span th:text="${instructor.course.name}"></span>
+                        </p>
+                        <div class="btn-group" role="group">
+                            <a th:href="@{/instructors/edit/{id}(id=${instructor.id})}" class="btn btn-warning mr-2">Update</a>
+                            <a th:href="@{/instructors/delete/{id}(id=${instructor.id})}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this instructor?');">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </th:block>
+    </div>
+
+    <th:block th:if="${#lists.isEmpty(instructors)}">
+        <p class="text-center no-results">No instructors found with that name.</p>
+    </th:block>
+
+    <div class="text-center mt-4">
+        <a href="/" class="btn btn-secondary">Return to Instructors List</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

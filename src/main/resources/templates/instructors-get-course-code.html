@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Course Code</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/instructors-get-course-code.css">
+</head>
+<body>
+<div class="container my-5">
+  <h1 class="text-center">Get Course Code</h1>
+  <form action="/instructors/courseCode" method="get" class="form-inline justify-content-center">
+    <div class="form-group mb-2">
+      <label for="email" class="sr-only">Email</label>
+      <input type="email" id="email" name="email" class="form-control" placeholder="Enter Instructor Email" required>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Get Course Code</button>
+  </form>
+
+  <div class="text-center mt-4">
+    <a href="/" class="btn btn-secondary">Back to Instructor List</a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

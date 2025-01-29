@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Instructor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/instructors-form-add.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Add Instructor</h1>
+    <form th:action="@{/instructors/save}" th:object="${instructor}" method="post">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" th:field="*{firstName}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" th:field="*{lastName}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="birthDate">Birth Date</label>
+            <input type="date" id="birthDate" th:field="*{birthDate}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" th:field="*{email}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="addressStreet">Street</label>
+            <input type="text" id="addressStreet" th:field="*{address.street}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="addressCity">City</label>
+            <input type="text" id="addressCity" th:field="*{address.city}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="addressState">State</label>
+            <input type="text" id="addressState" th:field="*{address.state}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="addressZip">Zip Code</label>
+            <input type="text" id="addressZip" th:field="*{address.zip}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="addressCountry">Country</label>
+            <input type="text" id="addressCountry" th:field="*{address.country}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <input type="text" id="courseName" th:field="*{course.name}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="courseCode">Course Code</label>
+            <input type="text" id="courseCode" th:field="*{course.code}" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="courseDescription">Course Description</label>
+            <textarea id="courseDescription" th:field="*{course.description}" class="form-control" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Save Instructor</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

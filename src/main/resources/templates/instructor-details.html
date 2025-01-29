@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/instructor-details.css">
+</head>
+<body>
+
+<div class="container my-5">
+    <h1 class="text-center">Instructor Details</h1>
+
+    <div class="instructor-info card p-4 mb-4">
+        <h3>Personal Information</h3>
+        <p><strong>First Name:</strong> <span th:text="${instructor.firstName}"></span></p>
+        <p><strong>Last Name:</strong> <span th:text="${instructor.lastName}"></span></p>
+        <p><strong>Birth Date:</strong> <span th:text="${instructor.birthDate}"></span></p>
+        <p><strong>Email:</strong> <span th:text="${instructor.email}"></span></p>
+    </div>
+
+    <div class="instructor-info card p-4 mb-4">
+        <h3>Address</h3>
+        <p><strong>Street:</strong> <span th:text="${instructor.address.street}"></span></p>
+        <p><strong>City:</strong> <span th:text="${instructor.address.city}"></span></p>
+        <p><strong>State:</strong> <span th:text="${instructor.address.state}"></span></p>
+        <p><strong>Zip:</strong> <span th:text="${instructor.address.zipCode}"></span></p>
+        <p><strong>Country:</strong> <span th:text="${instructor.address.country}"></span></p>
+    </div>
+
+    <div class="instructor-info card p-4 mb-4">
+        <h3>Course</h3>
+        <p><strong>Name:</strong> <span th:text="${instructor.course.name}"></span></p>
+        <p><strong>Code:</strong> <span th:text="${instructor.course.code}"></span></p>
+        <p><strong>Description:</strong> <span th:text="${instructor.course.description}"></span></p>
+    </div>
+
+    <div class="text-center mt-4">
+        <a th:href="@{/instructors/edit/{id}(id=${instructor.id})}" class="btn btn-warning">Edit</a>
+        <a href="/" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

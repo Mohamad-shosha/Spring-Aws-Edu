@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Instructor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/instructor-form-update.css">
+</head>
+
+<body>
+<div class="container">
+    <h1 class="text-center">Update Instructor</h1>
+    <form th:action="@{/instructors/update/{id}(id=${instructor.id})}" method="post" th:object="${instructor}">
+        <input type="hidden" th:field="*{id}"/>
+
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" th:field="*{firstName}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" th:field="*{lastName}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" th:field="*{email}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="birthDate">Birth Date</label>
+            <input type="date" id="birthDate" th:field="*{birthDate}" class="form-control" required />
+        </div>
+
+        <h3 class="mt-4">Course Details</h3>
+
+        <div class="form-group">
+            <label for="courseName">Course Name</label>
+            <input type="text" id="courseName" th:field="*{course.name}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="courseCode">Course Code</label>
+            <input type="text" id="courseCode" th:field="*{course.code}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="courseDescription">Course Description</label>
+            <textarea id="courseDescription" th:field="*{course.description}" class="form-control"></textarea>
+        </div>
+
+        <h3 class="mt-4">Address Details</h3>
+
+        <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" id="street" th:field="*{address.street}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" th:field="*{address.city}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" th:field="*{address.state}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="zipCode">Zip Code</label>
+            <input type="text" id="zipCode" th:field="*{address.zipCode}" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" th:field="*{address.country}" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Update Instructor</button>
+    </form>
+    <a href="/" class="btn btn-secondary btn-block mt-3">Back to List</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
