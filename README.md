@@ -1,6 +1,30 @@
-# Spring-Jpa
+# ✨ SpringAWSEdu
 
-This project demonstrates the use of Java Persistence API (JPA) for database operations and Hibernate for Object-Relational Mapping (ORM). It provides seamless backend integration for managing and querying data, featuring three main entities: Instructor, Address, and Course. Liquibase is used for database schema management, and Postman is utilized as a client for testing the API.
+This project showcases the powerful integration of **Spring MVC** with **Java Persistence API (JPA)**, utilizing **Hibernate** for efficient Object-Relational Mapping (ORM). Now deployed on **AWS** using **Elastic Beanstalk**, **EC2**, **RDS**, **IAM**, **VPC Security**, and more.
+
+## ✨ Key Features:
+- **Seamless Backend Integration**: Effortlessly manage and query data with a robust backend framework.
+- **Advanced AWS Deployment**: Hosted on AWS using Elastic Beanstalk, EC2, and RDS, ensuring high availability and scalability.
+- **Core Entities**:
+  - **Instructor**: Manage instructor details and associated courses.
+  - **Address**: Handle address information for instructors and courses.
+  - **Course**: Organize and maintain course offerings and their related entities.
+- **Database Schema Management**: Leverage **Liquibase** to manage database versioning and migrations, ensuring smooth transitions during updates.
+- **API Testing**: Utilize **Postman** as a client for testing API endpoints, making it easy to verify and validate the functionality of your application.
+- **Enhanced Security**: 
+  - Secure roles and permissions with **IAM Roles**.
+  - Use **AWS Systems Manager Parameter Store** for securely storing database credentials.
+  - Implement **Spring Profiles** for environment-specific configurations (**dev, prod**), improving security and maintainability.
+- **Docker Integration**: Easily deploy using Docker with pre-configured containerization support.
+- **Scalable & Secure Architecture**:
+  - Utilize **VPC Security Groups** to control network access.
+  - **Route 53 Integration** for a custom domain setup.
+- **Performance Optimization**: Utilize caching, connection pooling, and optimized database queries for high efficiency.
+- **MVC Architecture**: Utilize a clean and organized *Model-View-Controller* architecture for clear separation of concerns.
+- **Dynamic Web Pages**: Render interactive and dynamic web pages with *Thymeleaf*.
+- **CRUD Operations**: Perform *Create, Read, Update, and Delete* operations for Instructor, Address, and Course entities.
+
+With this setup, you can efficiently build and maintain a robust, secure, and scalable application tailored to your data management needs!
 
 ## 📝 Table of Contents
 - [Features](#features)
@@ -9,121 +33,132 @@ This project demonstrates the use of Java Persistence API (JPA) for database ope
 - [Technologies](#technologies)
 - [Demo](#demo)
 - [Docker](#docker)
+- [AWS Deployment](#aws-deployment)
+- [Deployment Process](#deployment-process)
+- [Security Enhancements](#security-enhancements)
 - [Resources](#resources)
-
-## 🚀 Features
-
-- *Create, Read, Update, and Delete* operations for Instructor, Address, and Course.
-- *RESTful API* design for easy interaction.
-- *Spring Boot* for backend development with automatic configuration and dependency management.
-- *JPA & Hibernate* for efficient ORM and database interactions.
-- *Liquibase* for database versioning and migrations.
-- *Postman* for testing API endpoints.
-
-Explore the powerful features of this project:
-
-### 1. *Create*
-
-Add new Instructor, Address, or Course entities through a straightforward API.
-
-### 2. *Read*
-
-Retrieve data for Instructor, Address, or Course entities.
-
-### 3. *Update*
-
-Modify existing entities with ease.
-
-### 4. *Delete*
-
-Remove entities with a single API call.
-
----
-
-## 📖 Prerequisites
-
-Before you begin, ensure you have the following:
-
-- *Java Development Kit (JDK)* installed (preferably JDK 11 or later).
-- *Maven* installed for dependency management.
-- Your favorite IDE (e.g., IntelliJ IDEA, Eclipse) for code editing.
-- *Postman* for API testing.
-
----
-
-## ✨ Getting Started
-
-### Step 1: Create a Spring Boot Project
-
-Generate a new Spring Boot project using [Spring Initializr](https://start.spring.io/) with the following settings:
-
-- Project: Maven Project
-- Language: Java
-- Spring Boot: Latest stable version
-- Packaging: Jar
-- Dependencies: Spring Web, Spring Data JPA, Liquibase, MySQL Driver
-
-Click "Generate" to download the project zip file.
-
-### Step 2: Extract and Import into IDE
-
-Extract the downloaded zip file and import the project into your preferred IDE.
-
-### Step 3: Configure Database and Liquibase
-
-- *Database Configuration*: Update `application.properties` or `application.yml` with your database connection details.
-- *Liquibase Configuration*: Configure Liquibase in your `application.properties` and add your changelog files in `src/main/resources/db/changelog`.
-
-### Step 4: Define Entities
-
-Create entity classes for Instructor, Address, and Course in your project.
-
-### Step 5: Create Repository Interfaces
-
-Create repository interfaces for each entity to perform CRUD operations.
-
-### Step 6: Implement Controllers
-
-Create REST controllers to handle HTTP requests and interact with your repositories.
-
-### Step 7: Test Using Postman
-
-Use Postman to test your API endpoints by sending requests to create, read, update, and delete entities.
-
-### Step 8: Run Your Application
-
-Run your Spring Boot application. The server will start at `http://localhost:8080`.
-
----
-
-## 📚 Technologies
-
-- *Spring Boot*: For building the backend application.
-- *JPA & Hibernate*: For ORM and database interactions.
-- *Liquibase*: For database schema management and migrations.
-- *MySQL*: As the database.
-- *Postman*: For API testing.
-
----
 
 ## 🎥 Demo
 
-[Watch the demo video here](https://github.com/your-repo/demo-link).
+[Watch the demo video here](https://drive.google.com/drive/folders/1Z7WG3Q52P4SGVnE3FR706UXGT05RHmjF)
 
----
-
-## 🐳 Docker
+## 🐙 Docker
 
 To push your Docker image to Docker Hub, use the following command:
 
 ```bash
-docker push mohamadshosha/spring-jpa-app:tagname
+docker push your-docker-repo/spring-mvc-app:latest
 ```
 
-## 🗂 Resources
+## 🌐 AWS Deployment
 
+The project is now deployed on AWS using the following services:
+- **Elastic Beanstalk**: Automates the deployment process.
+- **EC2**: Provides scalable computing resources.
+- **RDS (MySQL)**: Secure and managed database service.
+- **IAM Roles**: Controls access permissions.
+- **VPC Security**: Restricts network access.
+- **Route 53**: Custom domain setup.
+
+## 🚀 Deployment Process
+
+### Step 1: Build the JAR File
+Run the following command to build the project:
+```bash
+mvn clean package -DskipTests
+```
+
+### Step 2: Upload the JAR File to AWS
+Use AWS Elastic Beanstalk CLI or AWS Management Console to upload the JAR file.
+```bash
+ew deploy --application-name my-spring-app --environment-name my-env --version-label v1 --source-bundle myapp.jar
+```
+
+### Step 3: Monitor Deployment
+Monitor the deployment logs on AWS Elastic Beanstalk to ensure successful deployment.
+
+### Step 4: Test the Application
+Access your deployed application at:
+```bash
+http://your-app-env.elasticbeanstalk.com
+```
+
+### Step 5: Set Up Route 53
+To associate a custom domain with your application:
+1. Purchase a domain from AWS Route 53.
+2. Create a new hosted zone in Route 53.
+3. Configure an **A record** to point to the Elastic Beanstalk environment.
+4. Update the domain settings to reflect the new changes.
+5. Verify the domain mapping works correctly.
+
+## 🔒 Security Enhancements
+- **AWS Parameter Store** for securely storing credentials.
+- **Spring Profiles (dev, prod)** for environment-specific settings.
+- **Database credentials secured via AWS Systems Manager Parameter Store**.
+
+## 🐂 Prerequisites
+
+Before you begin, ensure you have the following:
+- *Java Development Kit (JDK 11 or later)* installed.
+- *Maven* for dependency management.
+- *Postman* for API testing.
+- *Docker* installed for containerization.
+- *AWS CLI* configured for deployment.
+
+## 💾 Getting Started
+
+### 🚀 Step 1: Create a Spring Boot Project
+
+Generate a new Spring Boot project using [Spring Initializr](https://start.spring.io/) with:
+- **Project**: Maven Project
+- **Language**: Java
+- **Spring Boot**: Latest stable version
+- **Packaging**: Jar
+- **Dependencies**: Spring Web, Spring Data JPA, Thymeleaf, Liquibase, MySQL Driver
+
+### 💪 Step 2: Configure Database & Liquibase
+
+Update `application.properties`:
+```properties
+spring.liquibase.change-log=db/changelog/db_master_changelog.xml
+
+# Use environment variables for security
+database.url=jdbc:mysql://localhost:3307/mydb
+database.username=root
+database.password=shosh404@@
+
+spring.datasource.url=${database.url}
+spring.datasource.username=${database.username}
+spring.datasource.password=${database.password}
+```
+
+### 👨‍💻 Step 3: Define Entities & Repositories
+
+Create entities for **Instructor**, **Address**, and **Course**, and define repository interfaces for each.
+
+### 🔧 Step 4: Implement Service Layer & Controllers
+
+Develop services to handle business logic and controllers to manage HTTP requests.
+
+### 🎨 Step 5: Create Thymeleaf Views
+
+Design templates for user interactions.
+
+### 🔍 Step 6: Test Using Postman
+
+Verify API functionality with Postman by sending **CRUD** requests.
+
+### ▶️ Step 7: Run Your Application
+
+Start your Spring Boot application. The server will be available at:
+[http://localhost:8082](http://localhost:8082)
+
+## 💽 Resources
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
+- [Spring MVC Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc)
 - [JPA and Hibernate Guide](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/)
 - [Liquibase Documentation](https://www.liquibase.org/documentation/index.html)
-- [Postman Documentation](https://learning.postman.com/docs/)
-
+- [Postman Documentation](https://learning.postman.com/)
+- [Thymeleaf Documentation](https://www.thymeleaf.org/documentation.html)
+- [Docker Documentation](https://docs.docker.com/get-started/)
+- [AWS Documentation](https://docs.aws.amazon.com/)
