@@ -95,6 +95,9 @@ To associate a custom domain with your application:
 - **AWS Parameter Store** for securely storing credentials.
 - **Spring Profiles (dev, prod)** for environment-specific settings.
 - **Database credentials secured via AWS Systems Manager Parameter Store**.
+```properties of prod
+spring.config.import=aws-parameterstore:/config/instructor-db
+```
 
 ## 🐂 Prerequisites
 
