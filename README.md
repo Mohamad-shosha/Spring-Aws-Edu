@@ -68,6 +68,27 @@ Run the following command to build the project:
 mvn clean package -DskipTests
 ```
 
+### Step 2: Using Awspring to access the dependencies of pom.xml
+Add the following dependencies to build the project:
+```bash
+<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.awspring.cloud</groupId>
+                <artifactId>spring-cloud-aws-dependencies</artifactId>
+                <version>3.2.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+        <dependency>
+            <groupId>io.awspring.cloud</groupId>
+            <artifactId>spring-cloud-aws-starter-parameter-store</artifactId>
+        </dependency>
+
+```
+
 ### Step 2: Upload the JAR File to AWS
 Use AWS Elastic Beanstalk CLI or AWS Management Console to upload the JAR file.
 ```bash
