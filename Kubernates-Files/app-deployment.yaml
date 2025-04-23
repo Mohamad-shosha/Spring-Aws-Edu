@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: instructor-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: instructor-app
+  template:
+    metadata:
+      labels:
+        app: instructor-app
+    spec:
+      containers:
+      - name: instructor-container
+        image: mohamadshosha/instructorsphare
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:mysql://mysql:3306/mydb
+        - name: SPRING_DATASOURCE_USERNAME
+          value: root
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: Nmnmnm6@@
