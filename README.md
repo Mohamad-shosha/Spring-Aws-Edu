@@ -1,188 +1,162 @@
-# ✨ SpringAWSEdu
+# ✨ SpringAWSK8sEdu
 
-This project showcases the powerful integration of **Spring MVC** with **Java Persistence API (JPA)**, utilizing **Hibernate** for efficient Object-Relational Mapping (ORM). Now deployed on **AWS** using **Elastic Beanstalk**, **EC2**, **RDS**, **IAM**, **VPC Security**, and more.
+A powerful educational project demonstrating the integration of **Spring MVC** with **Java Persistence API (JPA)** and **Hibernate** for Object-Relational Mapping (ORM). The application is deployed on **AWS** using services like **Elastic Beanstalk**, **EC2**, **RDS**, **IAM**, **VPC Security**, and enhanced with **Kubernetes (K8s)** for advanced container orchestration and scaling.
 
-## ✨ Key Features:
-- **Seamless Backend Integration**: Effortlessly manage and query data with a robust backend framework.
-- **Advanced AWS Deployment**: Hosted on AWS using Elastic Beanstalk, EC2, and RDS, ensuring high availability and scalability.
-- **Core Entities**:
-  - **Instructor**: Manage instructor details and associated courses.
-  - **Address**: Handle address information for instructors and courses.
-  - **Course**: Organize and maintain course offerings and their related entities.
-- **Database Schema Management**: Leverage **Liquibase** to manage database versioning and migrations, ensuring smooth transitions during updates.
-- **API Testing**: Utilize **Postman** as a client for testing API endpoints, making it easy to verify and validate the functionality of your application.
-- **Enhanced Security**: 
-  - Secure roles and permissions with **IAM Roles**.
-  - Use **AWS Systems Manager Parameter Store** for securely storing database credentials.
-  - Implement **Spring Profiles** for environment-specific configurations (**dev, prod**), improving security and maintainability.
-- **Docker Integration**: Easily deploy using Docker with pre-configured containerization support.
-- **Scalable & Secure Architecture**:
-  - Utilize **VPC Security Groups** to control network access.
-  - **Route 53 Integration** for a custom domain setup.
-- **Performance Optimization**: Utilize caching, connection pooling, and optimized database queries for high efficiency.
-- **MVC Architecture**: Utilize a clean and organized *Model-View-Controller* architecture for clear separation of concerns.
-- **Dynamic Web Pages**: Render interactive and dynamic web pages with *Thymeleaf*.
-- **CRUD Operations**: Perform *Create, Read, Update, and Delete* operations for Instructor, Address, and Course entities.
+---
 
-With this setup, you can efficiently build and maintain a robust, secure, and scalable application tailored to your data management needs!
+## ✨ Key Features
+
+- **Robust Backend Framework**: Efficiently manage and query data using a clean Spring MVC architecture.
+- **Advanced AWS Deployment**: Host the application on AWS with Elastic Beanstalk, EC2, and RDS for scalability and reliability.
+- **Kubernetes Integration**: Utilize Kubernetes for containerized application management, load balancing, rolling updates, and auto-scaling.
+- **Database Schema Management**: Manage database changes using **Liquibase** for smooth migrations and version control.
+- **API Testing**: Test all API endpoints seamlessly using **Postman**.
+- **Secure Infrastructure**:
+  - IAM roles and policies for controlled access.
+  - **AWS Systems Manager Parameter Store** for securely managing environment secrets and database credentials.
+  - **Spring Profiles** for environment-specific configurations.
+- **Docker Support**: Full containerization with Docker images for consistent, portable deployments.
+- **Scalable & Secure Network**:
+  - **VPC Security Groups** to restrict network traffic.
+  - **Route 53 Integration** for custom domain setup.
+- **Performance Optimization**: Improved caching, connection pooling, and optimized database queries.
+- **MVC Architecture**: Clean separation of concerns between Models, Views, and Controllers.
+- **Dynamic Web Pages**: Build interactive pages with **Thymeleaf**.
+- **Full CRUD Functionality**: Create, Read, Update, and Delete operations for core entities like **Instructor**, **Course**, and **Address**.
+
+---
 
 ## 📝 Table of Contents
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-- [Technologies](#technologies)
-- [Demo](#demo)
-- [Docker](#docker)
-- [AWS Deployment](#aws-deployment)
-- [Deployment Process](#deployment-process)
-- [Security Enhancements](#security-enhancements)
-- [Resources](#resources)
+
+- Key Features
+- Prerequisites
+- Getting Started
+- Technologies Used
+- Demo
+- Docker Usage
+- AWS Deployment
+- Kubernetes Deployment
+- Deployment Process
+- Security Enhancements
+- Resources
+
+---
 
 ## 🎥 Demo
 
-[Watch the demo video here](https://drive.google.com/drive/folders/1Z7WG3Q52P4SGVnE3FR706UXGT05RHmjF)
+[Watch the full demo here](https://drive.google.com/drive/folders/1Z7WG3Q52P4SGVnE3FR706UXGT05RHmjF)
 
-## 🐙 Docker
+---
 
-To push your Docker image to Docker Hub, use the following command:
+## 🐙 Docker Usage
 
-```bash
-docker push your-docker-repo/spring-mvc-app:latest
-```
+Build and push your Docker image to your Docker Hub repository.
+
+---
 
 ## 🌐 AWS Deployment
 
-The project is now deployed on AWS using the following services:
-- **Elastic Beanstalk**: Automates the deployment process.
-- **EC2**: Provides scalable computing resources.
-- **RDS (MySQL)**: Secure and managed database service.
-- **IAM Roles**: Controls access permissions.
-- **VPC Security**: Restricts network access.
-- **Route 53**: Custom domain setup.
+The project is deployed on AWS using:
+- **Elastic Beanstalk**: Automates deployment and scaling.
+- **EC2**: Virtual server hosting.
+- **RDS (MySQL)**: Managed relational database service.
+- **IAM**: Access management.
+- **VPC Security Groups**: Control inbound/outbound traffic.
+- **Route 53**: Custom domain mapping.
+
+---
+
+## ☸️ Kubernetes Deployment
+
+**Kubernetes** is used to manage Docker containers with:
+- **Deployments**: Control replica sets and application versions.
+- **Services**: Expose your app within the cluster or to the internet.
+- **ConfigMaps & Secrets**: Manage environment configs and credentials securely.
+- **Rolling Updates & Auto-scaling**: Seamless updates and horizontal scaling.
+
+The application can be deployed on:
+- **Amazon EKS (Elastic Kubernetes Service)** or
+- **Minikube (for local testing)**
+
+💻 **Access Minikube Dashboard**  
+You can manage and monitor your local Kubernetes cluster via the Minikube Dashboard:
+### 1. **Minikube Dashboard**
+   ![Minikube Dashboard](https://github.com/Mohamad-shosha/Spring-Aws-Edu/issues/1#issue-3012444637)
+
+Basic steps:
+- Containerize your Spring Boot application.
+- Define Kubernetes deployment and service configurations.
+- Apply manifests via `kubectl`.
+- Use Horizontal Pod Autoscaler for scaling.
+- Expose your service via a LoadBalancer or Ingress controller.
+
+---
 
 ## 🚀 Deployment Process
 
-### Step 1: Build the JAR File
-Run the following command to build the project:
-```bash
-mvn clean package -DskipTests
-```
+**Build & Package**
+- Build the application using Maven.
 
-### Step 2: Using Awspring to access the dependencies of pom.xml
-Add the following dependencies to build the project:
-```bash
-<dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.awspring.cloud</groupId>
-                <artifactId>spring-cloud-aws-dependencies</artifactId>
-                <version>3.2.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-        <dependency>
-            <groupId>io.awspring.cloud</groupId>
-            <artifactId>spring-cloud-aws-starter-parameter-store</artifactId>
-        </dependency>
+**Upload & Deploy**
+- Upload your JAR file to AWS Elastic Beanstalk or build Docker images and deploy via Kubernetes.
 
-```
+**Monitor**
+- Track logs and performance via AWS Console and Kubernetes dashboard.
 
-### Step 2: Upload the JAR File to AWS
-Use AWS Elastic Beanstalk CLI or AWS Management Console to upload the JAR file.
-```bash
-ew deploy --application-name my-spring-app --environment-name my-env --version-label v1 --source-bundle myapp.jar
-```
+**Testing**
+- Validate application functionality with Postman.
 
-### Step 3: Monitor Deployment
-Monitor the deployment logs on AWS Elastic Beanstalk to ensure successful deployment.
+**Domain Setup**
+- Configure a custom domain via AWS Route 53 pointing to your service.
 
-### Step 4: Test the Application
-Access your deployed application at:
-```bash
-http://your-app-env.elasticbeanstalk.com
-```
-
-### Step 5: Set Up Route 53
-To associate a custom domain with your application:
-1. Purchase a domain from AWS Route 53.
-2. Create a new hosted zone in Route 53.
-3. Configure an **A record** to point to the Elastic Beanstalk environment.
-4. Update the domain settings to reflect the new changes.
-5. Verify the domain mapping works correctly.
+---
 
 ## 🔒 Security Enhancements
-- **AWS Parameter Store** for securely storing credentials.
-- **Spring Profiles (dev, prod)** for environment-specific settings.
-- **Database credentials secured via AWS Systems Manager Parameter Store**.
-```properties of prod
-spring.config.import=aws-parameterstore:/config/instructor-db
-```
+
+- Use **AWS Parameter Store** to securely manage database and environment credentials.
+- Configure **Spring Profiles** for `dev`, `prod`, and `staging` environments.
+- Restrict database and API access using **IAM Roles** and **VPC Security Groups**.
+- Enforce HTTPS and security headers in production environments.
+
+---
 
 ## 🐂 Prerequisites
 
-Before you begin, ensure you have the following:
-- *Java Development Kit (JDK 11 or later)* installed.
-- *Maven* for dependency management.
-- *Postman* for API testing.
-- *Docker* installed for containerization.
-- *AWS CLI* configured for deployment.
+- **Java Development Kit (JDK 11 or later)**
+- **Maven**
+- **Docker**
+- **Postman**
+- **AWS CLI**
+- **kubectl** (Kubernetes CLI)
+- Optional: **Minikube** for local Kubernetes testing
+
+---
 
 ## 💾 Getting Started
 
-### 🚀 Step 1: Create a Spring Boot Project
+1. Create a new Spring Boot project via [Spring Initializr](https://start.spring.io/).
+2. Add required dependencies: Spring Web, Spring Data JPA, Liquibase, Thymeleaf, MySQL Driver.
+3. Configure database credentials in `application.properties`.
+4. Define core entities and repositories.
+5. Build service and controller layers.
+6. Create Thymeleaf views.
+7. Test using Postman.
+8. Build the application and deploy to AWS or Kubernetes.
 
-Generate a new Spring Boot project using [Spring Initializr](https://start.spring.io/) with:
-- **Project**: Maven Project
-- **Language**: Java
-- **Spring Boot**: Latest stable version
-- **Packaging**: Jar
-- **Dependencies**: Spring Web, Spring Data JPA, Thymeleaf, Liquibase, MySQL Driver
+---
 
-### 💪 Step 2: Configure Database & Liquibase
+## 📖 Resources
 
-Update `application.properties`:
-```properties
-spring.liquibase.change-log=db/changelog/db_master_changelog.xml
-
-# Use environment variables for security
-database.url=jdbc:mysql://localhost:3307/mydb
-database.username=root
-database.password=shosh404@@
-
-spring.datasource.url=${database.url}
-spring.datasource.username=${database.username}
-spring.datasource.password=${database.password}
-```
-
-### 👨‍💻 Step 3: Define Entities & Repositories
-
-Create entities for **Instructor**, **Address**, and **Course**, and define repository interfaces for each.
-
-### 🔧 Step 4: Implement Service Layer & Controllers
-
-Develop services to handle business logic and controllers to manage HTTP requests.
-
-### 🎨 Step 5: Create Thymeleaf Views
-
-Design templates for user interactions.
-
-### 🔍 Step 6: Test Using Postman
-
-Verify API functionality with Postman by sending **CRUD** requests.
-
-### ▶️ Step 7: Run Your Application
-
-Start your Spring Boot application. The server will be available at:
-[http://localhost:8082](http://localhost:8082)
-
-## 💽 Resources
 - [Spring Boot Documentation](https://spring.io/projects/spring-boot)
-- [Spring MVC Documentation](https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc)
-- [JPA and Hibernate Guide](https://docs.jboss.org/hibernate/orm/current/userguide/html_single/)
-- [Liquibase Documentation](https://www.liquibase.org/documentation/index.html)
+- [AWS Documentation](https://docs.aws.amazon.com/)
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
+- [Docker Documentation](https://docs.docker.com/)
+- [Liquibase Documentation](https://www.liquibase.org/documentation)
 - [Postman Documentation](https://learning.postman.com/)
 - [Thymeleaf Documentation](https://www.thymeleaf.org/documentation.html)
-- [Docker Documentation](https://docs.docker.com/get-started/)
-- [AWS Documentation](https://docs.aws.amazon.com/)
+
+---
+
+## ✅ Summary
+
+With **SpringAWSK8sEdu**, you gain a real-world, cloud-ready backend project combining modern backend frameworks, cloud services, Docker, and Kubernetes orchestration — all structured with clean MVC principles, secure deployment, and scalable cloud infrastructure.
