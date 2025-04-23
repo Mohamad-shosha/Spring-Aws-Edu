@@ -77,11 +77,16 @@ The project is deployed on AWS using:
 The application can be deployed on:
 - **Amazon EKS (Elastic Kubernetes Service)** or
 - **Minikube (for local testing)**
+# 💻 **Access Minikube Dashboard**
 
-💻 **Access Minikube Dashboard**  
-You can manage and monitor your local Kubernetes cluster via the Minikube Dashboard:
+You can manage and monitor your local Kubernetes cluster via the Minikube Dashboard. The dashboard provides a graphical interface to interact with and inspect your cluster resources.
+
 ### 1. **Minikube Dashboard**
-   ![Minikube Dashboard](https://github.com/Mohamad-shosha/Spring-Aws-Edu/issues/1#issue-3012444637)
+
+The Minikube Dashboard helps you visualize and manage your Kubernetes resources with ease. Here's how you can access it:
+
+[Minikube Dashboard](https://github.com/Mohamad-shosha/Spring-Aws-Edu/issues/1#issue-3012444637)
+![436319062-2c146dcc-a869-4667-8aba-990137374c04](https://github.com/user-attachments/assets/049210a8-dccf-476a-bcb3-7211d23f8cc4)
 
 Basic steps:
 - Containerize your Spring Boot application.
